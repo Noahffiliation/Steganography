@@ -4,8 +4,8 @@ The word steganography means "concealed writing." Steganography has been used fo
 The resulting encoded image file will appear to be mostly unaltered. This is because the least significant bit will not always be changed and when it is, the change will be imperceptible. For example a color value made up of RED 255, GREEN 255, and BLUE 255 (white) may become the color made up of RED 254, GREEN 254, and BLUE 254 (mostly white). The difference between white and mostly white is visually imperceptible.
 
 ## Build/Installation
-```
-gcc -std=c11 -Wall -Wextra -Werror -pedantic -o encode encode.c
+```bash
+$ make
 ```
 
 ## Usage
