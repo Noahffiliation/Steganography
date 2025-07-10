@@ -9,13 +9,13 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    FILE *fp = fopen_safe(argv[1], "r");
+    FILE *fp = fopen(argv[1], "r");
     if (!fp) {
         printf("Error: Opening base bitmap failed");
         return 1;
     }
 
-    FILE* output = fopen_safe(argv[2], "w");
+    FILE* output = fopen(argv[2], "w");
     if (!output) {
         printf("Error: Output file creation failed");
         return 1;
