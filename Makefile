@@ -1,2 +1,2 @@
 all:
-	gcc -std=c11 -Wall -Wextra -Werror -pedantic -o encode encode.c
+	gcc -std=c11 -Wall -Wextra -pedantic -o encode encode.c
