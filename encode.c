@@ -12,7 +12,6 @@ int main(int argc, char *argv[]) {
     FILE *fp = fopen(argv[1], "r");
     if (!fp) {
         printf("Error: Opening base bitmap failed");
-        fclose(fp);
         return 1;
     }
 
@@ -20,7 +19,6 @@ int main(int argc, char *argv[]) {
     if (!output) {
         printf("Error: Output file creation failed");
         fclose(fp);
-        fclose(output);
         return 1;
     }
 
