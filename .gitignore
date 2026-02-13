@@ -2,3 +2,9 @@
 .vscode
 encode
 enc.bmp
+*.gcov
+*.gcda
+*.gcno
+tests
+test_out*.bmp
+out.bmp
