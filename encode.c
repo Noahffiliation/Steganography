@@ -2,14 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Reads in a bitmap and a message and encodes the message into a new bitmap
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     if (argc < 4 || argc > 4) {
         printf("Error: Argument count");
         return 1;
     }
 
-    FILE *fp = fopen(argv[1], "r");
+    FILE* fp = fopen(argv[1], "r");
     if (!fp) {
         printf("Error: Opening base bitmap failed");
         return 1;
@@ -18,15 +17,12 @@ int main(int argc, char *argv[]) {
     FILE* output = fopen(argv[2], "w");
     if (!output) {
         printf("Error: Output file creation failed");
-        fclose(fp);
         return 1;
     }
 
-    char *message = argv[3];
+    char* message = argv[3];
     if (!message) {
         printf("Error: Message storage failed");
-        fclose(fp);
-        fclose(output);
         return 1;
     }
 
@@ -56,12 +52,12 @@ int main(int argc, char *argv[]) {
     int charIndex = 0;
     int bitIndex = 0;
     int nullIndex = 0;
-    // Iterates through each RGBa value, so we have to multiply by 4 to get through all the pixels in the image
+    // Iterates through each RGBa value, so we have to multipl by 4 to get through all the pixels in the image
     for (int index = 0; index < posHeight * width * 4; index++) {
         int color = getc(fp);
         // Skip the alpha value in each pixel
         if (index % 4 != 3 && charIndex <= (int) strlen(message)) {
-            // Retreive least significant bit (LSB)
+            // Retreive LSB
             char LSB = (message[charIndex] >> bitIndex) & 1;
             // Encode LSB into color byte and write to output bmp
             color = (color >> 1) << 1;
@@ -82,7 +78,7 @@ int main(int argc, char *argv[]) {
         // Copy the color to the new bmp
         } else {
             fputc(color, output);
-        }	
+        }
     }
 
     fclose(fp);
