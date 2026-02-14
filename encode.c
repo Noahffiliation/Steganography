@@ -82,7 +82,7 @@ int main(int argc, char *argv[]) {
         // Copy the color to the new bmp
         } else {
             fputc(color, output);
-        }
+        }	
     }
 
     fclose(fp);
