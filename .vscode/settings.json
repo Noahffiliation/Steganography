@@ -1,7 +1,0 @@
-{
-    "snyk.advanced.autoSelectOrganization": true,
-    "sonarlint.connectedMode.project": {
-        "connectionId": "noahffiliation",
-        "projectKey": "Noahffiliation_Steganography"
-    }
-}
